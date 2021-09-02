@@ -8,6 +8,7 @@ const FooterSection = styled.div`
   justify-content: center;
   align-items: center;
   flex-direction: column;
+  margin-top: 3rem;
   p{
     color: white;
     font-family: Montserrat;

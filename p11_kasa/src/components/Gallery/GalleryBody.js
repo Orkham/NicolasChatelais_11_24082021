@@ -1,7 +1,10 @@
 import React from 'react'
 import styled from 'styled-components';
 import { Link } from 'react-router-dom';
+import * as data from './../../utils/data/datas.json';
+import GalleryCard from './Card.js'
 
+console.log(data[0])
 
 const GalleryContent = styled.div`
     max-width:90%;
@@ -37,13 +40,12 @@ const GalleryContent = styled.div`
     `
 
 export default class GalleryContainer extends React.Component{
+    
     render(){
         return(
             <GalleryContent>
                 <Link to="/logement">
-                    <div>
-                        <h2>Titre de la location</h2>
-                    </div>
+                    <GalleryCard />
                 </Link>
                 <Link to="/logement">
                     <div>

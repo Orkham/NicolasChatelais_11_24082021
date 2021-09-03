@@ -99,6 +99,9 @@ const DropdownSection = styled.div`
         flex-direction: column;
     }
 `
+const ContainerArticle = styled.article`
+    
+`
 
 export default class Logement extends React.Component{
     render(){
@@ -106,7 +109,7 @@ export default class Logement extends React.Component{
             <div>
                 <Carousel />
 
-                <article>
+                <ContainerArticle>
                     <TitleSection>
                         <h1>Cozy loft on the Canal Saint-Martin</h1>
                         <h2>Paris, Ile-de-France</h2>
@@ -131,7 +134,7 @@ export default class Logement extends React.Component{
                         <div>Paris</div>
                     </TagsList>
 
-                </article>
+                </ContainerArticle>
 
                 <DropdownSection>
                     <LogementDescription />

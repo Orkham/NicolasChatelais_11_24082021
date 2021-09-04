@@ -13,27 +13,6 @@ const GalleryContent = styled.div`
     border-radius: 25px;
     height: auto;
     justify-content: space-around;
-    a{
-        text-decoration: none;
-    }
-    div{
-        background: #FF6060;
-        border-radius: 10px;
-        width: 340px;
-        height:340px;
-        margin: 56px;
-        display: flex; 
-        align-items:flex-end;
-        h2{
-            font-family: Montserrat;
-            font-style: normal;
-            font-weight: 500;
-            font-size: 18px;
-            line-height: 142.6%;
-            width:30%;
-            margin : 20px;
-        }
-    }
 `
 
 export default class GalleryContainer extends React.Component{
@@ -46,7 +25,6 @@ export default class GalleryContainer extends React.Component{
                         <GalleryCard cover={data.cover} title= {data.title} />
                     </Link>
                 ))}
-                
             </GalleryContent>
         )
     }

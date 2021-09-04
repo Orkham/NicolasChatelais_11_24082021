@@ -86,6 +86,7 @@ const DropdownSection = styled.div`
     width: 90%;
     margin: auto;
     justify-content: space-between;
+    position: relative;
     &>div:first-child{
         width: 50%;
         align-items: start;

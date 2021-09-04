@@ -3,6 +3,11 @@ import styled from 'styled-components';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { /*faChevronDown,*/ faChevronUp } from '@fortawesome/free-solid-svg-icons'
 
+const Dropdown = styled.div`
+    position: relative;
+    
+`
+
 const DropdownItem = styled.div`
     background: #FF6060;
     color: white;
@@ -18,6 +23,8 @@ const DropdownItem = styled.div`
     align-items: center;
     padding: 6px 18px;
     margin-bottom: 32px;
+    position: inherit;
+    z-index: 1;
     .chevron{
         color: white;
     }
@@ -36,7 +43,12 @@ const DropdownContent = styled.div`
     display: flex;
     flex-direction:column;
     padding: 6px 18px;
-    min-height: 250px;
+    min-height: 270px;
+    margin-top: -36px;
+    z-index:0;
+    position: inherit;
+    max-height:295px;
+    padding-top: 30px;
     p{
         margin: 0;
     }
@@ -45,7 +57,7 @@ const DropdownContent = styled.div`
 export default class LogementEquipements extends React.Component {
     render(){
         return(
-            <div>
+            <Dropdown>
                 <DropdownItem>Equipements
                     <FontAwesomeIcon icon={faChevronUp} className='chevron' />
                 </DropdownItem>
@@ -58,7 +70,7 @@ export default class LogementEquipements extends React.Component {
                     <p>Sèche-cheveux</p>
                     <p>Cintres</p>
                 </DropdownContent>
-            </div>
+            </Dropdown>
         );
     }
 }

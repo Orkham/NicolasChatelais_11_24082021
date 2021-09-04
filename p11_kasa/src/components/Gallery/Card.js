@@ -1,6 +1,7 @@
 import React from 'react'
 import styled from 'styled-components';
-import * as data from './../../utils/data/datas.json';
+//import datas from '../../utils/data/datas';
+
 
 const Card = styled.div`
     border-radius: 10px;
@@ -9,6 +10,7 @@ const Card = styled.div`
     margin: 56px;
     display: flex; 
     align-items:flex-end;
+    position: relative; 
     img{
         width: 340px;
         height:340px;
@@ -21,19 +23,24 @@ const Card = styled.div`
         font-weight: 500;
         font-size: 18px;
         line-height: 142.6%;
-        color: #FFFFFF;
         width:30%;
         margin : 20px;
+        color: #FF6060;
+        position: absolute; 
+        bottom: 0;
     }
 `
 
 export default class GalleryCard extends React.Component{
+    
     render(){
         return(
             <Card>
-                <img src={data[0].cover} alt={data[0].title} />
-                <h2>Titre de la location</h2>
-            </Card> 
+                <img src={this.props.cover} alt={this.props.title} />
+                <h2>{this.props.title}</h2>
+            </Card>
+            
         )
     }
 }
+

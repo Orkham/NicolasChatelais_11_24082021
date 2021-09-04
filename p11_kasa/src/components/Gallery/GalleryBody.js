@@ -1,10 +1,8 @@
 import React from 'react'
 import styled from 'styled-components';
 import { Link } from 'react-router-dom';
-import * as data from './../../utils/data/datas.json';
+import datas from '../../utils/data/datas';
 import GalleryCard from './Card.js'
-
-console.log(data[0])
 
 const GalleryContent = styled.div`
     max-width:90%;
@@ -32,46 +30,23 @@ const GalleryContent = styled.div`
             font-weight: 500;
             font-size: 18px;
             line-height: 142.6%;
-            color: #FFFFFF;
             width:30%;
             margin : 20px;
         }
     }
-    `
+`
 
 export default class GalleryContainer extends React.Component{
     
     render(){
         return(
             <GalleryContent>
-                <Link to="/logement">
-                    <GalleryCard />
-                </Link>
-                <Link to="/logement">
-                    <div>
-                        <h2>Titre de la location</h2>
-                    </div>
-                </Link>
-                <Link to="/logement">
-                    <div>
-                        <h2>Titre de la location</h2>
-                    </div>
-                </Link>
-                <Link to="/logement">
-                    <div>
-                        <h2>Titre de la location</h2>
-                    </div>
-                </Link>
-                <Link to="/logement">
-                    <div>
-                        <h2>Titre de la location</h2>
-                    </div>
-                </Link>
-                <Link to="/logement">
-                    <div>
-                        <h2>Titre de la location</h2>
-                    </div>
-                </Link>
+                {datas.map((data)=>(
+                    <Link to="/logement" key={data.id}>
+                        <GalleryCard cover={data.cover} title= {data.title} />
+                    </Link>
+                ))}
+                
             </GalleryContent>
         )
     }

@@ -9,122 +9,190 @@ import Collapse from '../../components/Collapse';
 //import LogementEquipements from '../../components/LogementEquipements';
 
 const TitleSection = styled.div`
-    width: 50%;
-    margin: auto;
-    color: #FF6060;
-    font-family: Montserrat;
-    font-style: normal;
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    justify-content: flex-start;
-    h1{
-        font-weight: 500;
-        font-size: 36px;
-        line-height: 142.6%;
-        margin-bottom: 0;
+  width: 50%;
+  margin: auto;
+  color: #ff6060;
+  font-family: Montserrat;
+  font-style: normal;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  h1 {
+    font-weight: 500;
+    font-size: 36px;
+    line-height: 142.6%;
+    margin-bottom: 0;
+  }
+  h2 {
+    margin-top: 0;
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 142.6%;
+  }
+  @media screen and (max-width: 820px) {
+    width: 100%;
+    h1 {
+      font-size: 18px;
     }
-    h2{
-        margin-top: 0;
-        font-weight: 500;
-        font-size: 18px;
-        line-height: 142.6%;
+    h2 {
+      font-size: 14px;
     }
+  }
 `
 
 const HostSection = styled.div`
+  width: 50%;
+  margin: auto;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  h3 {
+    color: #ff6060;
+    font-family: Montserrat;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 142.6%;
+    margin-right: 10px;
+    width: 100px;
+  }
+  .circle {
+    width: 64px;
+    height: 64px;
+  }
+  @media screen and (max-width: 820px) {
     width: 50%;
-    margin: auto;
-    display: flex; 
-    justify-content: flex-end;
-    align-items: center;
-    h3{
-        color:#FF6060;
-        font-family: Montserrat;
-        font-style: normal;
-        font-weight: 500;
-        font-size: 18px;
-        line-height: 142.6%;
-        margin-right: 10px;
-        width: 100px;
+    order: 1;
+    position: absolute;
+    top: 75%;
+    right: 0;
+    h3 {
+      font-size: 12px;
+      text-align: right;
     }
-    .circle{
-        width:64px;
-        height: 64px;
+    .circle {
+      width: 32px;
+      height: 32px;
     }
+  }
 `
 const RateSection = styled.div`
+  width: 50%;
+  margin: auto;
+  display: flex;
+  justify-content: flex-end;
+  .star {
+    margin-left: 10px;
+  }
+  @media screen and (max-width: 820px) {
     width: 50%;
-    margin: auto;
-    display: flex;
-    justify-content: flex-end;
-    .star{
-        margin-left:10px;
+    justify-content: flex-start;
+    margin: 0;
+    .star {
+      margin-right: 5px;
+      margin-left: 0;
+      width: 15px;
     }
+  }
 `
 
 const TagsList = styled.section`
-    width: 50%;
-    margin: auto;
+  width: 50%;
+  margin: auto;
+  display: flex;
+  div {
+    width: 115px;
+    margin-right: 10px;
+    background: #ff6060;
+    border-radius: 10px;
+    padding: 3px;
+    color: white;
+    font-family: Montserrat;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 142.6%;
     display: flex;
-    div{
-        width:115px;
-        margin-right: 10px;
-        background: #FF6060;
-        border-radius: 10px;
-        padding: 3px;
-        color: white;
-        font-family: Montserrat;
-        font-style: normal;
-        font-weight: 500;
-        font-size: 14px;
-        line-height: 142.6%;
-        display: flex; 
-        justify-content: center;
-        margin-right: 10px;
-        margin-top: 24px;
-        margin-bottom: 24px;
+    justify-content: center;
+    margin-right: 10px;
+    margin-top: 24px;
+    margin-bottom: 24px;
+  }
+  @media screen and (max-width: 820px) {
+    width: 100%;
+    div {
+      width: 84px;
+      border-radius: 5px;
+      font-size: 10px;
+      height: 18px;
+      align-items: center;
+      margin-top: 12px;
     }
+  }
 `
 
 const DropdownSection = styled.div`
+  display: flex;
+  width: 90%;
+  margin: auto;
+  justify-content: space-between;
+  position: relative;
+  & > div {
+    width: 50%;
     display: flex;
-    width: 90%;
-    margin: auto;
-    justify-content: space-between;
-    position: relative;
-    &>div{
-        width: 50%;
-        display: flex;
-        flex-direction: column;
-        align-items: end;
-        &>div{
-            margin:0;
-            &:nth-child(2){
-                height:249px;
-                ul{
-                    display: flex;
-                    flex-direction: column;
-                    padding: 0;
-                    li{
-                    list-style-type: none;
-                    }
-                }
-            }
+    flex-direction: column;
+    align-items: end;
+    & > div {
+      margin: 0;
+      &:nth-child(2) {
+        height: auto;
+        min-height: 249px;
+        ul {
+          display: flex;
+          flex-direction: column;
+          padding: 0;
+          li {
+            list-style-type: none;
+          }
         }
+      }
     }
-    .collapseContainer:first-child{
-            align-items: start;
-            
-        }
+  }
+  .collapseContainer:first-child {
+    align-items: start;
+  }
+  @media screen and (max-width: 820px) {
+    flex-wrap: wrap;
+    width: 100%;
+    & > div {
+      margin-bottom: 24px;
+      & > div:nth-child(2) {
+        height: auto;
+        margin-bottom: 24px;
+      }
+    }
+    .collapseContainer {
+      width: 90%;
+      margin: auto;
+    }
+    & > div > div:nth-child(2) {
+      min-height: 150px;
+    }
+  }
 `
 const ContainerArticle = styled.article`
-    display: flex;
-    width: 90%;
-    margin: auto;
-    flex-wrap: wrap;
-    justify-content: space-between;
-    margin-bottom: 24px;
+  display: flex;
+  width: 90%;
+  margin: auto;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  margin-bottom: 24px;
+  @media screen and (max-width: 820px) {
+    flex-direction: column;
+    flex-wrap: nowrap;
+    position: relative;
+  }
 `
 
 export default class Logement extends React.Component{

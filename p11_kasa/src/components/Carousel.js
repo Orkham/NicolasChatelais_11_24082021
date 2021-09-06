@@ -43,6 +43,16 @@ const CarouselSection = styled.div`
     font-size: 18px;
     line-height: 142.6%;
   }
+  @media screen and (max-width: 820px) {
+    img {
+      height: 255px;
+      border-radius: 10px;
+    }
+    .chevron {
+      font-size: 30px;
+      top: 45%;
+    }
+  }
 `
 
 export default class Carousel extends React.Component {

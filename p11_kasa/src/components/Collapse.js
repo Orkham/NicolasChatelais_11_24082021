@@ -30,6 +30,10 @@ const DropdownItem = styled.div`
   .chevron {
     color: white;
   }
+  @media screen and (max-width: 820px) {
+    width: 90%;
+    font-size: 13px;
+  }
 `
 
 const DropdownContent = styled.div`
@@ -47,6 +51,10 @@ const DropdownContent = styled.div`
   padding: 6px 18px;
   position: inherit;
   z-index: 0;
+  @media screen and (max-width: 820px) {
+    width: 90%;
+    font-size: 12px;
+  }
 `
 
 export default class Collapse extends React.Component {

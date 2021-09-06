@@ -6,6 +6,14 @@ import Collapse from '../../components/Collapse'
 const AboutSection = styled.div`
   display: flex;
   flex-direction: column;
+  @media screen and (max-width: 820px) {
+    &>div: nth-child(2) {
+      & > div {
+        width: 90%;
+        margin: auto;
+      }
+    }
+  }
 `
 
 export default class About extends React.Component {

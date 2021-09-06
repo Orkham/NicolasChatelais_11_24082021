@@ -3,28 +3,29 @@ import styled from 'styled-components';
 import img from '../assets/Img/AboutBanner.svg'
 
 const Banner = styled.div`
-    max-width:90%;
-    margin: 57px auto;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    color: #FFF;
-    background: url(${img});
-    background-size: cover;
-    border-radius: 25px;
-    width: 100%;
+  width: 90%;
+  margin: 57px auto;
+  img {
     height: 223px;
-    font-family: 'Montserrat', sans-serif;
-    font-style: normal;
-    font-weight: 500;
-    font-size: 48px;
-    line-height: 142.6%;
+    width: 100%;
+    border-radius: 25px;
+    object-fit: cover;
+  }
+
+  @media screen and (max-width: 820px) {
+    margin: 0 auto 10px;
+    img {
+      object-fit: unset;
+    }
+  }
 `
 
-export default class AboutPageBanner extends React.Component{
-    render(){
-        return(
-            <Banner />
-        )
-    }
+export default class AboutPageBanner extends React.Component {
+  render() {
+    return (
+      <Banner>
+        <img src={img} alt="joli décor" />
+      </Banner>
+    )
+  }
 }

@@ -5,5 +5,8 @@
     "@fortawesome/react-fontawesome": "^0.1.15",
     "react-router-dom": "^5.2.0",
     "styled-components": "^5.3.1"
+  },
+  "devDependencies": {
+    "prettier": "^2.3.2"
   }
 }

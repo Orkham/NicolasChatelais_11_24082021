@@ -9,50 +9,49 @@ const Dropdown = styled.div`
 `
 
 const DropdownItem = styled.div`
-    background: #FF6060;
+  background: #ff6060;
+  color: white;
+  font-family: Montserrat;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 142.6%;
+  border-radius: 5px;
+  width: 90%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 6px 18px;
+  margin-bottom: 32px;
+  position: inherit;
+  z-index: 1;
+  .chevron {
     color: white;
-    font-family: Montserrat;
-    font-style: normal;
-    font-weight: 500;
-    font-size: 24px;
-    line-height: 142.6%;
-    border-radius: 5px;
-    width: 90%;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 6px 18px;
-    margin-bottom: 32px;
-    position: inherit;
-    z-index:1;
-    .chevron{
-        color: white;
-    }
+  }
 `
 
 const DropdownContent = styled.div`
-    background: #F6F6F6;
-    font-family: Montserrat;
-    font-style: normal;
-    font-weight: normal;
-    font-size: 24px;
-    line-height: 142.6%;
-    color: #FF6060;
-    border-radius: 5px;
-    width: 90%;
-    display: flex;
-    padding: 6px 18px;
-    min-height: 250px;
-    margin-top: -36px;
-    position: inherit;
-    z-index:0;
-    max-height:295px;
-    p{
-        width: 100%;
-        overflow: scroll;
-        overflow-x: hidden;
-    }
-    
+  background: #f6f6f6;
+  font-family: Montserrat;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 18px;
+  line-height: 142.6%;
+  color: #ff6060;
+  border-radius: 5px;
+  width: 90%;
+  display: flex;
+  padding: 6px 18px;
+  min-height: 250px;
+  margin-top: -36px;
+  position: inherit;
+  z-index: 0;
+  max-height: 295px;
+  p {
+    width: 100%;
+    overflow: scroll;
+    overflow-x: hidden;
+  }
 `
 
 export default class LogementDescription extends React.Component {

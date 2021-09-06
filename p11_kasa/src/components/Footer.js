@@ -9,13 +9,17 @@ const FooterSection = styled.div`
   align-items: center;
   flex-direction: column;
   margin-top: 3rem;
-  p{
+  p {
     color: white;
     font-family: Montserrat;
     font-style: normal;
     font-weight: 500;
     font-size: 24px;
     line-height: 142.6%;
+    padding-bottom: 50px;
+    @media screen and (max-width: 820px) {
+      font-size: 12px;
+    }
   }
 `
 const Logo = styled.div`

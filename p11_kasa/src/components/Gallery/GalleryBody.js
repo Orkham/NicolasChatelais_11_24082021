@@ -5,14 +5,19 @@ import datas from '../../utils/data/datas';
 import GalleryCard from './Card.js'
 
 const GalleryContent = styled.div`
-    max-width:90%;
-    margin: 57px auto;
-    display: flex;
-    flex-wrap: wrap;
-    background: #F7F7F7;
-    border-radius: 25px;
-    height: auto;
-    justify-content: space-around;
+  max-width: 90%;
+  margin: 57px auto;
+  display: flex;
+  flex-wrap: wrap;
+  background: #f7f7f7;
+  border-radius: 25px;
+  height: auto;
+  justify-content: space-around;
+  @media screen and (max-width: 820px) {
+    margin: auto;
+    background: #ffffff;
+    max-width: 92%;
+  }
 `
 
 export default class GalleryContainer extends React.Component{

@@ -2,7 +2,18 @@ import React from 'react'
 import styled from 'styled-components';
 
 const Logo = styled.div`
-  .letter{
+  @media screen and (max-width: 820px) {
+    display: flex;
+    align-items: end;
+    .letter {
+      width: 32px;
+      margin-right: 4px;
+      &:first-child {
+        width: 40px;
+      }
+    }
+  }
+  .letter {
     margin-right: 6px;
   }
 `

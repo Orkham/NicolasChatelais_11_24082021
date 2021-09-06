@@ -5,7 +5,7 @@ import {
   /*faChevronDown,*/ faChevronUp,
 } from '@fortawesome/free-solid-svg-icons'
 
-const Dropdown = styled.div`
+const Container = styled.div`
   position: relative;
 `
 
@@ -18,14 +18,15 @@ const DropdownItem = styled.div`
   font-size: 18px;
   line-height: 142.6%;
   border-radius: 5px;
-  width: 90%;
+  width: 80%;
   display: flex;
   justify-content: space-between;
   align-items: center;
+  margin: auto;
   padding: 6px 18px;
   margin-bottom: 32px;
-  position: inherit;
   z-index: 1;
+  position: inherit;
   .chevron {
     color: white;
   }
@@ -39,39 +40,25 @@ const DropdownContent = styled.div`
   font-size: 18px;
   line-height: 142.6%;
   color: #ff6060;
-  border-radius: 10px;
-  width: 90%;
+  border-radius: 5px;
+  width: 80%;
   display: flex;
-  flex-direction: column;
+  margin: -36px auto 31px;
   padding: 6px 18px;
-  height: 249px;
-  margin-top: -36px;
-  z-index: 0;
   position: inherit;
-  padding-top: 30px;
-  p {
-    margin: 0;
-  }
+  z-index: 0;
 `
 
-export default class LogementEquipements extends React.Component {
+export default class Collapse extends React.Component {
   render() {
     return (
-      <Dropdown>
+      <Container className="collapseContainer">
         <DropdownItem>
-          Equipements
+          {this.props.title}
           <FontAwesomeIcon icon={faChevronUp} className="chevron" />
         </DropdownItem>
-        <DropdownContent>
-          <p>Climatisation</p>
-          <p>Wi-Fi</p>
-          <p>Cuisine</p>
-          <p>Espace de travail</p>
-          <p>Fer à repasser</p>
-          <p>Sèche-cheveux</p>
-          <p>Cintres</p>
-        </DropdownContent>
-      </Dropdown>
+        <DropdownContent>{this.props.content}</DropdownContent>
+      </Container>
     )
   }
 }

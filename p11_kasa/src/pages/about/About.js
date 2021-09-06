@@ -1,21 +1,61 @@
 import React from 'react';
 import AboutPageBanner from '../../components/AboutBanner'
-import Dropdown from '../../components/Dropdown';
-import styled from 'styled-components';
+import styled from 'styled-components'
+import Collapse from '../../components/Collapse'
 
 const AboutSection = styled.div`
-    display: flex; 
-    flex-direction : column;
-    
-    `
+  display: flex;
+  flex-direction: column;
+`
 
-export default class About extends React.Component{
-    render(){
-        return(
-            <AboutSection>
-                <AboutPageBanner />
-                <Dropdown />
-            </AboutSection>
-        )
-    }
+export default class About extends React.Component {
+  render() {
+    return (
+      <AboutSection>
+        <AboutPageBanner />
+        <div>
+          <Collapse
+            title="Fiabilité"
+            content={
+              <p>
+                "La bienveillance fait partie des valeurs fondatrices de Kasa.
+                Tout comportement discriminatoire ou de perturbation du
+                voisinage entraînera une exclusion de notre plateforme."
+              </p>
+            }
+          />
+          <Collapse
+            title="Respect"
+            content={
+              <p>
+                "La bienveillance fait partie des valeurs fondatrices de Kasa.
+                Tout comportement discriminatoire ou de perturbation du
+                voisinage entraînera une exclusion de notre plateforme."
+              </p>
+            }
+          />
+          <Collapse
+            title="Service"
+            content={
+              <p>
+                "La bienveillance fait partie des valeurs fondatrices de Kasa.
+                Tout comportement discriminatoire ou de perturbation du
+                voisinage entraînera une exclusion de notre plateforme."
+              </p>
+            }
+          />
+          <Collapse
+            title="Responsabilité"
+            content={
+              <p>
+                "La bienveillance fait partie des valeurs fondatrices de Kasa.
+                Tout comportement discriminatoire ou de perturbation du
+                voisinage entraînera une exclusion de notre plateforme."
+              </p>
+            }
+          />
+        </div>
+      </AboutSection>
+    )
+  }
 }

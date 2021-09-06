@@ -4,11 +4,12 @@ import img from '../../assets/Img/Host.png'
 import Carousel from '../../components/Carousel';
 import Red from '../../assets/Icons/RedStar.png'
 import Grey from '../../assets/Icons/GreyStar.png'
-import LogementDescription from '../../components/LogementDescription';
-import LogementEquipements from '../../components/LogementEquipements';
+//import LogementDescription from '../../components/LogementDescription';
+import Collapse from '../../components/Collapse';
+//import LogementEquipements from '../../components/LogementEquipements';
 
 const TitleSection = styled.div`
-    width: 90%;
+    width: 50%;
     margin: auto;
     color: #FF6060;
     font-family: Montserrat;
@@ -32,9 +33,11 @@ const TitleSection = styled.div`
 `
 
 const HostSection = styled.div`
-    width: 90%;
+    width: 50%;
     margin: auto;
     display: flex; 
+    justify-content: flex-end;
+    align-items: center;
     h3{
         color:#FF6060;
         font-family: Montserrat;
@@ -43,22 +46,25 @@ const HostSection = styled.div`
         font-size: 18px;
         line-height: 142.6%;
         margin-right: 10px;
+        width: 100px;
     }
     .circle{
-        widht:64px;
+        width:64px;
+        height: 64px;
     }
 `
 const RateSection = styled.div`
-    width: 90%;
+    width: 50%;
     margin: auto;
     display: flex;
+    justify-content: flex-end;
     .star{
         margin-left:10px;
     }
 `
 
 const TagsList = styled.section`
-    width: 90%;
+    width: 50%;
     margin: auto;
     display: flex;
     div{
@@ -87,21 +93,38 @@ const DropdownSection = styled.div`
     margin: auto;
     justify-content: space-between;
     position: relative;
-    &>div:first-child{
-        width: 50%;
-        align-items: start;
-        display: flex;
-        flex-direction: column;
-    }
     &>div{
         width: 50%;
-        align-items: end;
         display: flex;
         flex-direction: column;
+        align-items: end;
+        &>div{
+            margin:0;
+            &:nth-child(2){
+                height:249px;
+                ul{
+                    display: flex;
+                    flex-direction: column;
+                    padding: 0;
+                    li{
+                    list-style-type: none;
+                    }
+                }
+            }
+        }
     }
+    .collapseContainer:first-child{
+            align-items: start;
+            
+        }
 `
 const ContainerArticle = styled.article`
-    
+    display: flex;
+    width: 90%;
+    margin: auto;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin-bottom: 24px;
 `
 
 export default class Logement extends React.Component{
@@ -121,6 +144,12 @@ export default class Logement extends React.Component{
                         <img src={img} alt="Alexandre Dumas" className='circle' />
                     </HostSection>
 
+                    <TagsList>
+                        <div>Cozy</div>
+                        <div>Canal</div>
+                        <div>Paris</div>
+                    </TagsList>
+
                     <RateSection>
                         <img src={Red} alt="étoile rouge" className='star' />
                         <img src={Red} alt="étoile rouge" className='star'/>
@@ -129,17 +158,28 @@ export default class Logement extends React.Component{
                         <img src={Grey} alt="étoile grise" className='star'/>
                     </RateSection>
 
-                    <TagsList>
-                        <div>Cozy</div>
-                        <div>Canal</div>
-                        <div>Paris</div>
-                    </TagsList>
+                    
 
                 </ContainerArticle>
 
                 <DropdownSection>
-                    <LogementDescription />
-                    <LogementEquipements />
+                    <Collapse title ="Description" content ={
+                        <p>
+                            Vous serez à 50m du canal Saint-martin où vous pourrez pique-niquer l'été et à côté de nombreux bars et restaurants. Au cœur de Paris avec 5 lignes de métro et de nombreux bus. Logement parfait pour les voyageurs en solo et les voyageurs d'affaires. Vous êtes à 1 station de la gare de l'est (7 minutes à pied).
+                        </p>
+                    }/>
+                    <Collapse title ="Equipements" content ={
+                        <ul>
+                            <li>Climatisation</li>
+                            <li>Wi-Fi</li>
+                            <li>Cuisine</li>
+                            <li>Espace de travail</li>
+                            <li>Fer à repasser</li>
+                            <li>Sèche-cheveux</li>
+                            <li>Cintres</li>
+                        </ul>
+                        
+                    } />
                 </DropdownSection>
             </div>
         )

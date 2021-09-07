@@ -1,9 +1,7 @@
 import React from 'react'
 import styled from 'styled-components'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import {
-  /*faChevronDown,*/ faChevronUp,
-} from '@fortawesome/free-solid-svg-icons'
+import { faChevronDown, faChevronUp } from '@fortawesome/free-solid-svg-icons'
 
 const Container = styled.div`
   position: relative;
@@ -29,6 +27,9 @@ const DropdownItem = styled.div`
   position: inherit;
   .chevron {
     color: white;
+    &:hover {
+      cursor: pointer;
+    }
   }
   @media screen and (max-width: 820px) {
     width: 90%;
@@ -58,14 +59,44 @@ const DropdownContent = styled.div`
 `
 
 export default class Collapse extends React.Component {
+  constructor(props) {
+    super(props)
+    this.state = { display: true }
+  }
+
+  log = () => {
+    console.log(this.state)
+  }
+  toggleDisplay = () => {
+    this.setState((state) => ({
+      display: !state.display,
+    }))
+  }
   render() {
     return (
       <Container className="collapseContainer">
         <DropdownItem>
           {this.props.title}
-          <FontAwesomeIcon icon={faChevronUp} className="chevron" />
+          {!this.state.display ? (
+            <FontAwesomeIcon
+              icon={faChevronUp}
+              className="chevron"
+              onClick={this.toggleDisplay}
+            />
+          ) : (
+            <FontAwesomeIcon
+              icon={faChevronDown}
+              className="chevron"
+              onClick={this.toggleDisplay}
+            />
+          )}
         </DropdownItem>
-        <DropdownContent>{this.props.content}</DropdownContent>
+
+        {!this.state.display ? (
+          <DropdownContent>{this.props.content}</DropdownContent>
+        ) : (
+          ''
+        )}
       </Container>
     )
   }

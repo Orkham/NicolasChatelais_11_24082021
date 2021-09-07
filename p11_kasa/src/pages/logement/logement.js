@@ -103,7 +103,7 @@ const TagsList = styled.section`
   width: 50%;
   margin: auto;
   display: flex;
-  div {
+  li {
     width: 115px;
     margin-right: 10px;
     background: #ff6060;
@@ -125,7 +125,7 @@ const TagsList = styled.section`
   }
   @media screen and (max-width: 820px) {
     width: 100%;
-    div {
+    li {
       width: 84px;
       border-radius: 5px;
       font-size: 10px;
@@ -224,7 +224,7 @@ export default class Logement extends React.Component {
   }
 
   render() {
-    this.log()
+    //this.log()
     const logement = this.getDatas()
     const tagsList = this.getTagsList()
     const equipementsList = this.getEquimentsList()
@@ -250,7 +250,7 @@ export default class Logement extends React.Component {
 
           <TagsList>
             {tagsList.map((tag) => {
-              return <div>{tag}</div>
+              return <li key={tag}>{tag}</li>
             })}
           </TagsList>
 
@@ -293,7 +293,7 @@ export default class Logement extends React.Component {
             content={
               <ul>
                 {equipementsList.map((equipement) => {
-                  return <li>{equipement}</li>
+                  return <li key={equipement}>{equipement}</li>
                 })}
               </ul>
             }

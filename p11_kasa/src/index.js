@@ -23,13 +23,14 @@ ReactDOM.render(
       <Header />
       <Switch>
         <Route exact path="/">
-          <Accueil />    
+          <Accueil />
         </Route>
         <Route path="/about">
           <About />
         </Route>
-        <Route path="/logement">
-          <Logement />
+        <Route
+          path="/logement/:id"
+          render={(props) => <Logement {...props} />} >
         </Route>
         <Route>
           <Error />
@@ -37,7 +38,8 @@ ReactDOM.render(
       </Switch>
       <Footer />
     </Router>
-    
   </React.StrictMode>,
   document.getElementById('root')
-);
+)
+
+//render={(props)=><div>{JSON.stringify(props)}</div>} >

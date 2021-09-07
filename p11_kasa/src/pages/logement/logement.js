@@ -4,9 +4,10 @@ import img from '../../assets/Img/Host.png'
 import Carousel from '../../components/Carousel';
 import Red from '../../assets/Icons/RedStar.png'
 import Grey from '../../assets/Icons/GreyStar.png'
-//import LogementDescription from '../../components/LogementDescription';
-import Collapse from '../../components/Collapse';
-//import LogementEquipements from '../../components/LogementEquipements';
+import Collapse from '../../components/Collapse'
+import datas from '../../utils/data/datas'
+
+//console.log(datas)
 
 const TitleSection = styled.div`
   width: 50%;
@@ -60,6 +61,7 @@ const HostSection = styled.div`
   .circle {
     width: 64px;
     height: 64px;
+    border-radius: 50%;
   }
   @media screen and (max-width: 820px) {
     width: 50%;
@@ -115,9 +117,11 @@ const TagsList = styled.section`
     line-height: 142.6%;
     display: flex;
     justify-content: center;
+    align-items: center;
     margin-right: 10px;
     margin-top: 24px;
     margin-bottom: 24px;
+    text-align: center;
   }
   @media screen and (max-width: 820px) {
     width: 100%;
@@ -195,62 +199,108 @@ const ContainerArticle = styled.article`
   }
 `
 
-export default class Logement extends React.Component{
-    render(){
-        return(
-            <div>
-                <Carousel />
+export default class Logement extends React.Component {
+  log() {
+    //console.log(this.props.match.params)
+    console.log(datas)
+  }
 
-                <ContainerArticle>
-                    <TitleSection>
-                        <h1>Cozy loft on the Canal Saint-Martin</h1>
-                        <h2>Paris, Ile-de-France</h2>
-                    </TitleSection>
+  getDatas() {
+    return datas.find((data) => data.id === this.props.match.params.id)
+  }
 
-                    <HostSection>
-                        <h3>Alexandre Dumas</h3>
-                        <img src={img} alt="Alexandre Dumas" className='circle' />
-                    </HostSection>
+  getTagsList() {
+    const tagsList = this.getDatas().tags.map((tag) => {
+      return tag
+    })
+    return tagsList
+  }
 
-                    <TagsList>
-                        <div>Cozy</div>
-                        <div>Canal</div>
-                        <div>Paris</div>
-                    </TagsList>
+  getEquimentsList() {
+    const equipementsList = this.getDatas().equipments.map((equipement) => {
+      return equipement
+    })
+    return equipementsList
+  }
 
-                    <RateSection>
-                        <img src={Red} alt="étoile rouge" className='star' />
-                        <img src={Red} alt="étoile rouge" className='star'/>
-                        <img src={Red} alt="étoile rouge" className='star'/>
-                        <img src={Grey} alt="étoile grise" className='star'/>
-                        <img src={Grey} alt="étoile grise" className='star'/>
-                    </RateSection>
+  render() {
+    this.log()
+    const logement = this.getDatas()
+    const tagsList = this.getTagsList()
+    const equipementsList = this.getEquimentsList()
 
-                    
+    return (
+      <div>
+        <Carousel />
 
-                </ContainerArticle>
+        <ContainerArticle>
+          <TitleSection>
+            <h1>{logement.title}</h1>
+            <h2>{logement.location}</h2>
+          </TitleSection>
 
-                <DropdownSection>
-                    <Collapse title ="Description" content ={
-                        <p>
-                            Vous serez à 50m du canal Saint-martin où vous pourrez pique-niquer l'été et à côté de nombreux bars et restaurants. Au cœur de Paris avec 5 lignes de métro et de nombreux bus. Logement parfait pour les voyageurs en solo et les voyageurs d'affaires. Vous êtes à 1 station de la gare de l'est (7 minutes à pied).
-                        </p>
-                    }/>
-                    <Collapse title ="Equipements" content ={
-                        <ul>
-                            <li>Climatisation</li>
-                            <li>Wi-Fi</li>
-                            <li>Cuisine</li>
-                            <li>Espace de travail</li>
-                            <li>Fer à repasser</li>
-                            <li>Sèche-cheveux</li>
-                            <li>Cintres</li>
-                        </ul>
-                        
-                    } />
-                </DropdownSection>
-            </div>
-        )
-    }
+          <HostSection>
+            <h3>{logement.host.name}</h3>
+            <img
+              src={logement.host.picture}
+              alt={logement.host.name}
+              className="circle"
+            />
+          </HostSection>
+
+          <TagsList>
+            {tagsList.map((tag) => {
+              return <div>{tag}</div>
+            })}
+          </TagsList>
+
+          <RateSection>
+            <img
+              src={logement.rating >= 1 ? Red : Grey}
+              alt="étoile rouge"
+              className="star"
+            />
+            <img
+              src={logement.rating >= 2 ? Red : Grey}
+              alt="étoile rouge"
+              className="star"
+            />
+            <img
+              src={logement.rating >= 3 ? Red : Grey}
+              alt="étoile rouge"
+              className="star"
+            />
+            <img
+              src={logement.rating >= 4 ? Red : Grey}
+              alt="étoile grise"
+              className="star"
+            />
+            <img
+              src={logement.rating >= 5 ? Red : Grey}
+              alt="étoile grise"
+              className="star"
+            />
+          </RateSection>
+        </ContainerArticle>
+
+        <DropdownSection>
+          <Collapse
+            title="Description"
+            content={<p>{logement.description}</p>}
+          />
+          <Collapse
+            title="Equipements"
+            content={
+              <ul>
+                {equipementsList.map((equipement) => {
+                  return <li>{equipement}</li>
+                })}
+              </ul>
+            }
+          />
+        </DropdownSection>
+      </div>
+    )
+  }
 }
 

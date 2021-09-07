@@ -14,9 +14,6 @@ const Banner = styled.div`
 
   @media screen and (max-width: 820px) {
     margin: 0 auto 10px;
-    img {
-      object-fit: unset;
-    }
   }
 `
 

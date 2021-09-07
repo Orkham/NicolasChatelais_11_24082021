@@ -23,14 +23,14 @@ const GalleryContent = styled.div`
 export default class GalleryContainer extends React.Component{
     
     render(){
-        return(
-            <GalleryContent>
-                {datas.map((data)=>(
-                    <Link to="/logement" key={data.id}>
-                        <GalleryCard cover={data.cover} title= {data.title} />
-                    </Link>
-                ))}
-            </GalleryContent>
+        return (
+          <GalleryContent>
+            {datas.map((data) => (
+              <Link to={`/logement/${data.id}`} key={data.id}>
+                <GalleryCard cover={data.cover} title={data.title} />
+              </Link>
+            ))}
+          </GalleryContent>
         )
     }
 }

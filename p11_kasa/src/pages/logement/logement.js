@@ -224,14 +224,13 @@ export default class Logement extends React.Component {
   }
 
   render() {
-    //this.log()
     const logement = this.getDatas()
     const tagsList = this.getTagsList()
     const equipementsList = this.getEquimentsList()
 
     return (
       <div>
-        <Carousel />
+        <Carousel id={this.props.match.params.id} />
 
         <ContainerArticle>
           <TitleSection>

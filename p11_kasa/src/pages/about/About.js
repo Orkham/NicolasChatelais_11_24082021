@@ -1,25 +1,12 @@
 import React from 'react';
 import AboutPageBanner from '../../components/AboutBanner'
-import styled from 'styled-components'
 import Collapse from '../../components/Collapse'
-
-const AboutSection = styled.div`
-  display: flex;
-  flex-direction: column;
-  @media screen and (max-width: 820px) {
-    &>div: nth-child(2) {
-      & > div {
-        width: 90%;
-        margin: auto;
-      }
-    }
-  }
-`
+import '../../utils/style/pages/about.css'
 
 export default class About extends React.Component {
   render() {
     return (
-      <AboutSection>
+      <div className="aboutSection">
         <AboutPageBanner />
         <div>
           <Collapse
@@ -63,7 +50,7 @@ export default class About extends React.Component {
             }
           />
         </div>
-      </AboutSection>
+      </div>
     )
   }
 }

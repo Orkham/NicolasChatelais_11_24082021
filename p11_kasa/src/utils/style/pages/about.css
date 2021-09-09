@@ -1,0 +1,11 @@
+.aboutSection{
+    display: flex;
+  flex-direction: column;
+}
+@media screen and (max-width: 820px) {
+    .aboutSection>div:nth-child(2)>div{
+        width: 90%;
+        margin: auto;
+    }
+    
+  }

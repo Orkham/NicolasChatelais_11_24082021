@@ -5,41 +5,7 @@ import Red from '../../assets/Icons/RedStar.png'
 import Grey from '../../assets/Icons/GreyStar.png'
 import Collapse from '../../components/Collapse'
 import datas from '../../utils/data/datas'
-
-//console.log(datas)
-
-const TitleSection = styled.div`
-  width: 50%;
-  margin: auto;
-  color: #ff6060;
-  font-family: Montserrat;
-  font-style: normal;
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  justify-content: flex-start;
-  h1 {
-    font-weight: 500;
-    font-size: 36px;
-    line-height: 142.6%;
-    margin-bottom: 0;
-  }
-  h2 {
-    margin-top: 0;
-    font-weight: 500;
-    font-size: 18px;
-    line-height: 142.6%;
-  }
-  @media screen and (max-width: 820px) {
-    width: 100%;
-    h1 {
-      font-size: 18px;
-    }
-    h2 {
-      font-size: 14px;
-    }
-  }
-`
+import '../../utils/style/pages/logement.css'
 
 const HostSection = styled.div`
   width: 50%;
@@ -236,10 +202,10 @@ export default class Logement extends React.Component {
         <Carousel id={this.props.match.params.id} />
 
         <ContainerArticle>
-          <TitleSection>
+          <div className="titleSection">
             <h1>{logement.title}</h1>
             <h2>{logement.location}</h2>
-          </TitleSection>
+          </div>
 
           <HostSection>
             <h3>{logement.host.name}</h3>

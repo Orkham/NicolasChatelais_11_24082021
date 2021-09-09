@@ -20,7 +20,7 @@
     display: none;
 }
 @media screen and (max-width: 820px) {
-    .titleBanner{
+    .titleBanner h1{
     font-size: 24px;
     line-height: 100%;
     border-radius: 10px;
@@ -30,8 +30,9 @@
     justify-content: flex-start;
     padding-left: 16px;
     margin: 20px auto;
+    width:87%;
 }
-.titleBanner .smallDisplay{
+.titleBanner h1 .smallDisplay{
     display:flex;
 }
 }

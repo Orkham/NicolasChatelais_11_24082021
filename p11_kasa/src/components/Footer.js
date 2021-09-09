@@ -1,37 +1,11 @@
 import React from 'react'
-import styled from 'styled-components'
+import '../utils/style/components/footer.css'
 
-const FooterSection = styled.div`
-  background: black;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-  margin-top: 3rem;
-  p {
-    color: white;
-    font-family: Montserrat;
-    font-style: normal;
-    font-weight: 500;
-    font-size: 24px;
-    line-height: 142.6%;
-    padding-bottom: 50px;
-    @media screen and (max-width: 820px) {
-      font-size: 12px;
-    }
-  }
-`
-const Logo = styled.div`
-  .letter {
-    margin-right: 6px;
-    margin-top: 66px;
-  }
-`
 export default class Footer extends React.Component {
   render() {
     return (
-      <FooterSection>
-        <Logo>
+      <section className="footerSection">
+        <div className="logo">
           <svg
             width="32"
             height="36"
@@ -88,9 +62,9 @@ export default class Footer extends React.Component {
               fill="#FFFFFF"
             />
           </svg>
-        </Logo>
+        </div>
         <p>© 2020 Kasa. All rights reserved</p>
-      </FooterSection>
+      </section>
     )
   }
 }

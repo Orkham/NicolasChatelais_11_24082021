@@ -1,59 +1,11 @@
-import React from 'react';
-import styled from 'styled-components';
-import img from '../assets/Img/Logement.png'
+import React from 'react'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faChevronRight, faChevronLeft } from '@fortawesome/free-solid-svg-icons'
+import {
+  faChevronRight,
+  faChevronLeft,
+} from '@fortawesome/free-solid-svg-icons'
 import datas from '../utils/data/datas'
-
-const CarouselSection = styled.div`
-  width: 90%;
-  margin: auto;
-  position: relative;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  .chevron {
-    color: white;
-    position: absolute;
-    top: 40%;
-    font-size: 79px;
-    &:hover {
-      cursor: pointer;
-    }
-  }
-  .chevron-left {
-    left: 2%;
-  }
-  .chevron-right {
-    right: 2%;
-  }
-  img {
-    object-fit: cover;
-    width: 100%;
-    border-radius: 25px;
-    height: 415px;
-  }
-  .compteur {
-    color: white;
-    margin-top: -33px;
-    font-family: Montserrat;
-    font-style: normal;
-    font-weight: 500;
-    font-size: 18px;
-    line-height: 142.6%;
-  }
-  @media screen and (max-width: 820px) {
-    img {
-      height: 255px;
-      border-radius: 10px;
-    }
-    .chevron {
-      font-size: 30px;
-      top: 45%;
-    }
-  }
-`
+import '../utils/style/components/carousel.css'
 
 export default class Carousel extends React.Component {
   constructor(props) {
@@ -84,23 +36,36 @@ export default class Carousel extends React.Component {
     const carouselImg = this.getDatas().pictures
 
     return (
-      <CarouselSection>
-        <FontAwesomeIcon
-          icon={faChevronLeft}
-          className="chevron chevron-left"
-          onClick={this.previousImg}
-        />
+      <div className="carousel">
+        {carouselImg.length > 1 ? (
+          <FontAwesomeIcon
+            icon={faChevronLeft}
+            className="chevron chevron-left"
+            onClick={this.previousImg}
+          />
+        ) : (
+          ''
+        )}
+
         <img src={carouselImg[this.indexToDisplay()]} alt="logement" />
-        <div className="compteur">
-          {this.state.index + 1}/{carouselImg.length}
-        </div>
-        <FontAwesomeIcon
-          icon={faChevronRight}
-          className="chevron chevron-right"
-          onClick={this.nextImg}
-        />
-      </CarouselSection>
+        {carouselImg.length > 1 ? (
+          <div className="compteur">
+            {this.state.index + 1}/{carouselImg.length}
+          </div>
+        ) : (
+          ''
+        )}
+
+        {carouselImg.length > 1 ? (
+          <FontAwesomeIcon
+            icon={faChevronRight}
+            className="chevron chevron-right"
+            onClick={this.nextImg}
+          />
+        ) : (
+          ''
+        )}
+      </div>
     )
   }
 }
-

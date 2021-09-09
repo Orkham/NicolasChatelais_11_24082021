@@ -28,9 +28,8 @@ ReactDOM.render(
         <Route path="/about">
           <About />
         </Route>
-        <Route
-          path="/logement/:id"
-          render={(props) => <Logement {...props} />} >
+        <Route path="/logement/:id">
+          <Logement />
         </Route>
         <Route>
           <Error />

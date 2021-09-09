@@ -1,7 +1,6 @@
 import React from 'react';
-import styled from 'styled-components';
-import img from '../../assets/Img/Host.png'
-import Carousel from '../../components/Carousel';
+import styled from 'styled-components'
+import Carousel from '../../components/Carousel'
 import Red from '../../assets/Icons/RedStar.png'
 import Grey from '../../assets/Icons/GreyStar.png'
 import Collapse from '../../components/Collapse'
@@ -209,11 +208,6 @@ const ContainerArticle = styled.article`
 `
 
 export default class Logement extends React.Component {
-  log() {
-    //console.log(this.props.match.params)
-    console.log(datas)
-  }
-
   getDatas() {
     return datas.find((data) => data.id === this.props.match.params.id)
   }

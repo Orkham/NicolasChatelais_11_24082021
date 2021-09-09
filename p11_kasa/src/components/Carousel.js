@@ -66,7 +66,6 @@ export default class Carousel extends React.Component {
   }
 
   indexToDisplay = () => {
-    console.log(this.state.index)
     return this.state.index
   }
   nextImg = () => {

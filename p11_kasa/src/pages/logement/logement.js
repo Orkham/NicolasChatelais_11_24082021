@@ -67,11 +67,14 @@ const HostSection = styled.div`
     width: 50%;
     order: 1;
     position: absolute;
-    top: 75%;
+    bottom: 0;
+    margin-bottom: -7%;
     right: 0;
+
     h3 {
       font-size: 12px;
       text-align: right;
+      width: 60px;
     }
     .circle {
       width: 32px;
@@ -179,7 +182,13 @@ const DropdownSection = styled.div`
     .collapseContainer {
       width: 90%;
       margin: auto;
+      margin-bottom: 20px;
+      align-items: center;
+      &:first-child {
+        align-items: center;
+      }
     }
+
     & > div > div:nth-child(2) {
       min-height: 150px;
     }

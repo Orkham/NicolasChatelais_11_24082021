@@ -41,5 +41,3 @@ ReactDOM.render(
   </React.StrictMode>,
   document.getElementById('root')
 )
-
-//render={(props)=><div>{JSON.stringify(props)}</div>} >

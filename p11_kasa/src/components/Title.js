@@ -6,10 +6,18 @@ const Logo = styled.div`
     display: flex;
     align-items: end;
     .letter {
-      width: 32px;
       margin-right: 4px;
       &:first-child {
-        width: 40px;
+        width: 37px;
+      }
+      &:nth-child(2) {
+        width: 32px;
+      }
+      &:nth-child(3) {
+        width: 27px;
+      }
+      &:nth-child(4) {
+        width: 28px;
       }
     }
   }

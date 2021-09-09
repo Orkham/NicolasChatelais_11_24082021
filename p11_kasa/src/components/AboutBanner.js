@@ -4,7 +4,7 @@ import img from '../assets/Img/AboutBanner.svg'
 
 const Banner = styled.div`
   width: 90%;
-  margin: 57px auto;
+  margin: 0 auto 57px;
   img {
     height: 223px;
     width: 100%;
@@ -16,7 +16,6 @@ const Banner = styled.div`
     margin: 0 auto 10px;
   }
 `
-
 export default class AboutPageBanner extends React.Component {
   render() {
     return (

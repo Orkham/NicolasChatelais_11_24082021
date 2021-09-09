@@ -1,6 +1,5 @@
 import React from 'react';
-import styled from 'styled-components';
-import img from '../../assets/Img/Host.png'
+import styled from 'styled-components'
 import Carousel from '../../components/Carousel';
 import Red from '../../assets/Icons/RedStar.png'
 import Grey from '../../assets/Icons/GreyStar.png'

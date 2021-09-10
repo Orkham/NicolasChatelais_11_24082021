@@ -1,5 +1,5 @@
 import React from 'react';
-import AboutPageBanner from '../../components/AboutBanner'
+import Banner from '../../components/Banner'
 import Collapse from '../../components/Collapse'
 import '../../utils/style/pages/about.css'
 
@@ -7,7 +7,7 @@ export default class About extends React.Component {
   render() {
     return (
       <div className="aboutSection">
-        <AboutPageBanner />
+        <Banner title="" img="/AboutBanner.png" />
         <div>
           <Collapse
             title="Fiabilité"

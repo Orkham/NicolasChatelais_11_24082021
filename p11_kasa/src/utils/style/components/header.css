@@ -1,13 +1,12 @@
 .headerSection{
-    display: flex;
+  display: flex;
   justify-content: space-between;
   align-items: center;
   max-width: 90%;
   margin: 57px auto;
 }
 @media screen and (max-width: 820px) {
-    .headerSection{
-        margin: 20px auto;
-    }
-    
-  }
+  .headerSection{
+      margin: 20px auto;
+  }  
+}
